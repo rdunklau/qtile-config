@@ -19,6 +19,7 @@ keys = [
     Key([mod], "Tab", lazy.layout.next()),
     Key([mod], "f", lazy.window.toggle_floating()),
     Key([mod], "g", lazy.togroup()),
+    Key([mod], "r", lazy.spawncmd()),
     Key([mod], "j", lazy.layout.up()),
     Key([mod], "k", lazy.layout.down()),
     Key([mod], "q", lazy.restart()),
@@ -26,7 +27,7 @@ keys = [
     Key([mod], "Return", lazy.spawn('urxvt')),
     Key([mod], "w", lazy.window.kill()),
     Key([mod], "BackSpace", lazy.spawn(
-        "dmenu_run -i -fn 'monofur:pixelsize=16:antialias=true'"
+        "dmenu_run -i -b -fn 'monofur:pixelsize=16:antialias=true'"
         " -p 'Run' -nf '#ffffff' -nb '#202020'")),
 ]
 
@@ -38,7 +39,7 @@ mouse = [
     Click([mod], "Button2", lazy.window.bring_to_front())
 ]
 
-groups = [Group("0")]
+groups = []
 
 for i in groups:
     keys.append(
@@ -64,7 +65,7 @@ screens = [
                     this_screen_border='0000FF',
                     borderwidth=2, padding=4, active=liteblue, **defaults),
                 widget.Sep(),
-                widget.Prompt(),
+                widget.Prompt(foreground=liteblue, **defaults),
                 widget.WindowName(
                     margin_x=6, foreground=liteblue, **defaults),
                 widget.Mpd(host='entrecote', **defaults),
