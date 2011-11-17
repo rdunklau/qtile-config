@@ -68,9 +68,6 @@ screens = [
                 widget.WindowName(
                     margin_x=6, foreground=liteblue, **defaults),
                 widget.Mpd(host='entrecote', **defaults),
-                widget.CPUGraph(
-                    width=1000, graph_color=liteblue, fill_color='001188',
-                    border_color='000000'),
                 widget.Systray()
             ],
             28
@@ -86,12 +83,6 @@ screens = [
                 widget.Prompt(),
                 widget.WindowName(
                     margin_x=6, foreground=litegreen, **defaults),
-                widget.MemoryGraph(
-                    width=500, graph_color='22FF44', fill_color='118811',
-                    border_color='000000'),
-                widget.SwapGraph(
-                    width=500, graph_color='FF2020', fill_color='881111',
-                    border_color='000000'),
                 widget.Clock(
                     '%H:%M %d/%m/%y', padding=6,
                     foreground=litegreen, **defaults),
